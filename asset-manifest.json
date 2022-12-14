@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Foods_website/static/css/main.25549f09.css",
+    "main.js": "/Foods_website/static/js/main.5c28bbc9.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Foods_website/static/js/787.28cb0dcd.chunk.js",
+    "static/media/about1.jpg": "/Foods_website/static/media/about1.91adf8dc0779a423e014.jpg",
+    "static/media/backed.jpg": "/Foods_website/static/media/backed.580213ab4b0ed0a48210.jpg",
+    "static/media/header2.jpg": "/Foods_website/static/media/header2.26055482a5039f8e5ed6.jpg",
+    "static/media/header1.jpg": "/Foods_website/static/media/header1.3a8b2fe5b0bcb5467b91.jpg",
+    "static/media/header3.jpg": "/Foods_website/static/media/header3.59a4d0c649a9a76e13a3.jpg",
+    "static/media/girl1.jpg": "/Foods_website/static/media/girl1.960ff282036e3c4e63eb.jpg",
+    "static/media/quote.jpg": "/Foods_website/static/media/quote.8dac9ee9eb3e67760871.jpg",
+    "static/media/boy.jpg": "/Foods_website/static/media/boy.f6e01ff2a6ae714f244b.jpg",
+    "static/media/about.jpg": "/Foods_website/static/media/about.e134a3e3c81479f9c673.jpg",
+    "static/media/contact.jpg": "/Foods_website/static/media/contact.878af65c368c9820ca8b.jpg",
+    "static/media/food1.jpg": "/Foods_website/static/media/food1.1defe43a880022701c8d.jpg",
+    "static/media/shoppable-recipes.jpg": "/Foods_website/static/media/shoppable-recipes.abe4c583cfce3b08ae43.jpg",
+    "static/media/recipe-analysis.jpg": "/Foods_website/static/media/recipe-analysis.3e4ee69426cb20de3075.jpg",
+    "static/media/recipe-management.jpg": "/Foods_website/static/media/recipe-management.21d5210c2e5260b6bbdc.jpg",
+    "static/media/meal-planning.jpg": "/Foods_website/static/media/meal-planning.00c577df20d0fa37e64f.jpg",
+    "index.html": "/Foods_website/index.html",
+    "main.25549f09.css.map": "/Foods_website/static/css/main.25549f09.css.map",
+    "main.5c28bbc9.js.map": "/Foods_website/static/js/main.5c28bbc9.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Foods_website/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25549f09.css",
+    "static/js/main.5c28bbc9.js"
+  ]
+}
