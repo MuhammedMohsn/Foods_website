@@ -1,7 +1,7 @@
 import './App.css'
 import React, { Fragment, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter,HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Foods from './Pages/Foods'

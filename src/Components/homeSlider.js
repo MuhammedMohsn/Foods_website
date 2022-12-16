@@ -7,7 +7,7 @@ function homeSlider() {
   return (
     <Fragment>
       <div
-        id="carouselExampleIndicators"
+        id="carouselExampleControls"
         style={{ height: '500px' }}
         className="carousel slide"
         data-bs-ride="carousel"
@@ -61,26 +61,26 @@ function homeSlider() {
         <button
           className="carousel-control-prev "
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleControls"
           data-bs-slide="prev"
         >
           <span
             className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Previous</span>
+          <span className="visually-hidden ">Previous</span>
         </button>
         <button
           className="carousel-control-next "
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleControls"
           data-bs-slide="next"
         >
           <span
             className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Next</span>
+          <span className="visually-hidden ">Next</span>
         </button>
       </div>
     </Fragment>
