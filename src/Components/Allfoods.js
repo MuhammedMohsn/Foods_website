@@ -15,16 +15,19 @@ function Allfoods({ searchInput }) {
   })
   // this effect for getting popularReceipes from API
   useEffect(() => {
+   let getData=setTimeout(()=>{
     get_food_data(URL, apiKey,"")
-      .then((data) => {
-        let { recipes } = data
-        setLoading(false)
-        setPopularReceipes(recipes)
-        setReceipeType("popular")
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    .then((data) => {
+      let { recipes } = data
+      setLoading(false)
+      setPopularReceipes(recipes)
+      setReceipeType("popular")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+   },0)
+   return ()=>{clearTimeout(getData)}
   }, [setPopularReceipes])
   // to set type with popular after the component is mounted and data fetched
   useEffect(() => {

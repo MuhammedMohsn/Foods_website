@@ -13,7 +13,8 @@ function PopularReceipes() {
   let navigate=useNavigate()
   // to get popular receipes from API
   useEffect(() => {
-    Get_food_data(URL,apiKey,"")
+    let getData=setTimeout(()=>{
+      Get_food_data(URL,apiKey,"")
       .then((data) => {
         let { recipes } = data;
         setLoading(false);
@@ -21,7 +22,10 @@ function PopularReceipes() {
       })
       .catch((err) => {
         console.log(err);
-      });}, []);
+      })
+    },0)
+    return ()=>{clearTimeout(getData)}
+   ;}, []);
   // to set the popular receipes in localStorage because when navigating to different page , state is destroyed
   // to allow us use this state to find food that related to id 
   useEffect(() => {

@@ -13,15 +13,18 @@ function VegetarianReceipes() {
   let {vegetarianReceipes,setVegetarianReceipes,setReceipeType,receipeType}=useContext(productsContext)
   // to get vegetarianProducts from API
   useEffect(() => {
+   let getData=setTimeout(()=>{
     Get_food_data(URL, apiKey, 'vegetarian')
-      .then((data) => {
-        let { recipes } = data
-        setLoading(false)
-        setVegetarianReceipes(recipes)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    .then((data) => {
+      let { recipes } = data
+      setLoading(false)
+      setVegetarianReceipes(recipes)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+   },0)
+   return ()=>{clearTimeout(getData)}
   }, [setVegetarianReceipes])
   // to set the vegetarian receipes in localStorage because when navigating to different page , state is destroyed
   // to allow us use this state to find food that related to id 

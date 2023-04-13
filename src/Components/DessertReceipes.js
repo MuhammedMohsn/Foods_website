@@ -13,7 +13,8 @@ function DessertReceeipes() {
   let [loading, setLoading] = useState(true)
   // for getting dessertProducts from API
   useEffect(() => {
-    Get_food_data(URL, apiKey, 'dessert')
+    let getData=setTimeout(()=>{
+      Get_food_data(URL, apiKey, 'dessert')
       .then((data) => {
         let { recipes } = data
         setLoading(false)
@@ -22,6 +23,8 @@ function DessertReceeipes() {
       .catch((err) => {
         console.log(err)
       })
+    },0)
+    return ()=>{clearTimeout(getData)}
   }, [setDessertReceipes])
   // to set the dessert receipes in localStorage because when navigating to different page , state is destroyed
   // to allow us use this state to find food that related to id 
