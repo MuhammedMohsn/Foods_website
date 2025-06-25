@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { Fragment, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Foods from "./Pages/Foods";
@@ -33,6 +33,7 @@ function App() {
           setDessertReceipes,
         }}
       >
+        
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <NavbarComponent />
           <br />
