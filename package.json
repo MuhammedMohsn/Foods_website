@@ -1,5 +1,5 @@
-{"homepage":"http://MuhammedMohsn.github.io/Foods_website/",
-  "name": "my-app",
+{"homepage":"http://MuhammedMohsn.github.io/Foods_website",
+  "name": "foods_website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
