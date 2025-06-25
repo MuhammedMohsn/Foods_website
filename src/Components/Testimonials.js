@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { TestimonialsData } from '../Data/TestimonialsData'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import React, { Fragment } from "react";
+import { TestimonialsData } from "../Data/TestimonialsData";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 // this component used in home page
 function Testimonials() {
   return (
@@ -15,7 +15,7 @@ function Testimonials() {
                 Testimonials
               </h2>
               {TestimonialsData.map((item) => {
-                let { content, img, name, job } = item
+                let { content, img, name, job } = item;
                 return (
                   <Col
                     key={Math.random()}
@@ -24,17 +24,17 @@ function Testimonials() {
                     md={3}
                     lg={3}
                     className="h-75 mb-3"
-                    style={{ backgroundColor: 'white' }}
+                    style={{ backgroundColor: "white" }}
                   >
-                    <p style={{ color: 'gray' }}>{content}</p>
+                    <p style={{ color: "gray" }}>{content}</p>
                     <div className="h-50 d-flex align-items-center justify-content-between">
                       <img
                         src={img}
                         alt={name}
                         style={{
-                          borderRadius: '50%',
-                          height: '90px',
-                          width: '90px',
+                          borderRadius: "50%",
+                          height: "90px",
+                          width: "90px",
                         }}
                       />
                       <div className="w-50 info">
@@ -43,14 +43,14 @@ function Testimonials() {
                       </div>
                     </div>
                   </Col>
-                )
+                );
               })}
             </Row>
           </div>
         </Container>
       </div>
     </Fragment>
-  )
+  );
 }
 
-export default Testimonials
+export default Testimonials;

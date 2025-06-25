@@ -33,7 +33,7 @@ function App() {
           setDessertReceipes,
         }}
       >
-        <HashRouter>
+        <HashRouter basename={process.env.PUBLIC_URL}>
           <NavbarComponent />
           <br />
           <Routes>

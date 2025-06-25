@@ -1,12 +1,13 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { productsContext } from "../Context/ProductsContext";
 import CategoryComponent from "../Components/CategoryComponent";
 function Category() {
-  let { popularReceipes,setReceipeType,receipeType} = useContext(productsContext);
-  let navigate=useNavigate()
+  let { popularReceipes, setReceipeType, receipeType } =
+    useContext(productsContext);
+  let navigate = useNavigate();
   let { categoryName } = useParams();
   let [categoryProducts, setCategoryProducts] = useState([]);
   let filteredData = popularReceipes.filter((product) => {
@@ -16,23 +17,23 @@ function Category() {
   useEffect(() => {
     setCategoryProducts(filteredData);
   }, [categoryName]);
-    // to set type with popular after the component is mounted
+  // to set type with popular after the component is mounted
   useEffect(() => {
-    localStorage.setItem('type', JSON.stringify(receipeType))
-  },[receipeType])
+    localStorage.setItem("type", JSON.stringify(receipeType));
+  }, [receipeType]);
   return (
     <Fragment>
       <div className="popular_receipes">
-      <div className="about_landing" >
-      <h2>{categoryName} Foods Recipes</h2>
-      <h3>Explore Our {categoryName} Food Recipes
-      </h3></div>
-      <br/>
-      <CategoryComponent/>
+        <div className="about_landing">
+          <h2>{categoryName} Foods Recipes</h2>
+          <h3>Explore Our {categoryName} Food Recipes</h3>
+        </div>
+        <br />
+        <CategoryComponent />
         <Container>
-        <Row>
+          <Row>
             {categoryProducts.map((product) => {
-              let { title, image,id } = product;
+              let { title, image, id } = product;
               return (
                 <Col
                   xs={12}
@@ -45,7 +46,15 @@ function Category() {
                 >
                   <img src={image} alt="...." className="swiper_img" />
                   <h6 className="text-center">{title}</h6>
-                  <button className="view_details_btn" onClick={()=>{navigate(`/foods/${id}`);setReceipeType("popular")}}>View Details</button>
+                  <button
+                    className="view_details_btn"
+                    onClick={() => {
+                      navigate(`/foods/${id}`);
+                      setReceipeType("popular");
+                    }}
+                  >
+                    View Details
+                  </button>
                 </Col>
               );
             })}

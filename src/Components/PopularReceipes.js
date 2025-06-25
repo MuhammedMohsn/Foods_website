@@ -1,39 +1,43 @@
-import React, { Fragment, useState, useEffect,useContext } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Container from "react-bootstrap/Container";
-import {useNavigate} from 'react-router-dom'
-import {URL,apiKey} from '../API'
+import { useNavigate } from "react-router-dom";
+import { URL, apiKey } from "../API";
 import Get_food_data from "../API";
-import {productsContext} from '../Context/ProductsContext'
+import { productsContext } from "../Context/ProductsContext";
 // this component used in home page
 function PopularReceipes() {
-  let {popularReceipes,setPopularReceipes,setReceipeType,receipeType}=useContext(productsContext)
+  let { popularReceipes, setPopularReceipes, setReceipeType, receipeType } =
+    useContext(productsContext);
   let [loading, setLoading] = useState(true);
-  let navigate=useNavigate()
+  let navigate = useNavigate();
   // to get popular receipes from API
   useEffect(() => {
-    let getData=setTimeout(()=>{
-      Get_food_data(URL,apiKey,"")
-      .then((data) => {
-        let { recipes } = data;
-        setLoading(false);
-        setPopularReceipes(recipes);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-    },0)
-    return ()=>{clearTimeout(getData)}
-   ;}, []);
+    let getData = setTimeout(() => {
+      Get_food_data(URL, apiKey, "")
+        .then((data) => {
+          let { recipes } = data;
+          setLoading(false);
+          setPopularReceipes(recipes);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 0);
+    return () => {
+      clearTimeout(getData);
+    };
+  }, []);
   // to set the popular receipes in localStorage because when navigating to different page , state is destroyed
-  // to allow us use this state to find food that related to id 
+  // to allow us use this state to find food that related to id
   useEffect(() => {
-    localStorage.setItem('popular_receipes', JSON.stringify(popularReceipes));
-  },[popularReceipes])
+    localStorage.setItem("popular_receipes", JSON.stringify(popularReceipes));
+  }, [popularReceipes]);
   // to put receipetype in localStorage and use it for specify we filter according to which products
   useEffect(() => {
-    localStorage.setItem('type', JSON.stringify(receipeType));},[receipeType])
+    localStorage.setItem("type", JSON.stringify(receipeType));
+  }, [receipeType]);
   if (loading) {
     return <div>loading..............</div>;
   }
@@ -50,7 +54,7 @@ function PopularReceipes() {
             onSlideChange={() => console.log("slide change")}
           >
             {popularReceipes.map((product) => {
-              let {id, title, image } = product;
+              let { id, title, image } = product;
               return (
                 <SwiperSlide
                   key={Math.random()}
@@ -59,7 +63,15 @@ function PopularReceipes() {
                 >
                   <img src={image} alt="...." className="swiper_img" />
                   <h6 className="text-center">{title}</h6>
-                  <button className="view_details_btn" onClick={()=>{setReceipeType("popular");navigate(`/foods/${id}`);}}>View Details</button>
+                  <button
+                    className="view_details_btn"
+                    onClick={() => {
+                      setReceipeType("popular");
+                      navigate(`/foods/${id}`);
+                    }}
+                  >
+                    View Details
+                  </button>
                 </SwiperSlide>
               );
             })}
